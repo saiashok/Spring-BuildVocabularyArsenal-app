@@ -1,0 +1,214 @@
+@CHARSET "ISO-8859-1";
+
+.image {
+	margin: auto;
+	width: 60%;
+	border: 3px solid #73AD21;
+	padding: 200px;
+}
+
+#welcome {
+	font-size: 200%;
+	font-style: oblique;
+	color: black;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 550px;
+    height: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+    left: 200%;
+}
+
+.mtooltip {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+.mtooltip .mtooltiptext {
+    visibility: hidden;
+    width: 550px;
+    height: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -550px;
+    opacity: 0;
+    transition: opacity 1s;
+    left: 200%;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 200%;
+    left: 250%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.mtooltip .mtooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    margin-left: 12000px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mtooltip:hover .mtooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+#DyFlashcards {
+    width: 200px;
+    float: left;
+    height: 300px;
+    background-color: white;
+    /* overflow-y: scroll; overflow-x:hidden; */
+}
+
+#MasteredFlashcards {
+    width: 200px;
+    float: right;
+    height: 300px;
+    background-color: white;
+    /* overflow-y: scroll; overflow-x:hidden; */
+} 
+
+#quotesDy{
+	width: 600px;
+	margin: auto;
+    height: 110px;    
+    border: 1px solid red;
+    box-sizing: border-box;
+    align: center;
+    background-color: teal;
+    box-shadow: 10px 10px 5px #888888;
+    border: 2px solid #a1a1a1;
+    padding: 1px 40px; 
+    background: #dddddd;
+    border-radius: 25px;
+}
+
+.QNavBut{
+	 background-color: #ff8000;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#pronounce{
+	 background-color: #ffffff;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 20%;
+    height: 5%;
+}
+
+input[type=submit] {
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 11px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#speechbutton{
+	position: relative;
+    top: '-10px'
+}
+
+.masteredlist th {
+    border: 1px solid #ddd;
+    padding: 18px;
+    background-color: #3fd6c2;
+}
+
+.cardlist th {
+    border: 1px solid #ddd;
+    padding: 18px;
+    background-color: #ff8000;
+}
+
+#mostSearched{
+	float: center;
+	margin-top: 150px;
+	
+}
+
+.myclass{
+	float: left;
+	}
+
+#MasteredFlashcards{
+	width: 33%;
+}
+
+#DyFlashcards{
+	width: 33%;
+}
+
+.notifications th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: #d7dd57;
+}

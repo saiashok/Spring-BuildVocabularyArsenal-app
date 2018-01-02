@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<security:authentication-manager>
+
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<security:http use-expressions="true">
+	
+	<security:intercept-url pattern="/adminpage" access="hasRole('ROLE_ADMIN')" />
+	<security:intercept-url pattern="/listwordsbyPage" access="hasRole('ROLE_ADMIN')" />
+	<security:intercept-url pattern="/insertwordpage" access="hasRole('ROLE_ADMIN')" />
+	<security:intercept-url pattern="/updatewordpage" access="hasRole('ROLE_ADMIN')" />
+	<security:intercept-url pattern="/updatewordpage" access="hasRole('ROLE_ADMIN')" />
+	<security:intercept-url pattern="/manageflashcardspage" access="isAuthenticated()" />
+	<security:intercept-url pattern="/createaccount" access="permitAll" />
+	<security:intercept-url pattern="/newaccountpage" access="permitAll" />
+	<security:intercept-url pattern="/managefcpage" access="permitAll" />
+	<security:intercept-url pattern="/getbooktext" access="permitAll" />
+	<security:intercept-url pattern="/static/**" access="permitAll" />
+	<security:intercept-url pattern="/userpage" access="permitAll" />
+	<security:intercept-url pattern="/login" access="permitAll" />
+	<security:intercept-url pattern="/logout" access="isAuthenticated()" />
+	<security:intercept-url pattern="/userflashcards" access="isAuthenticated()" />
+	<security:intercept-url pattern="/listflashcards" access="isAuthenticated()" />
+	<security:intercept-url pattern="/addtoflashcards" access="isAuthenticated()" />
+	<security:intercept-url pattern="/addtoflashcardsJson" access="isAuthenticated()" />
+	<security:intercept-url pattern="/ajaxaddtoflashcards" access="isAuthenticated()" />
+	<security:intercept-url pattern="/postcheckboxvalues" access="isAuthenticated()" />
+	<security:intercept-url pattern="/**" access="permitAll" />
+	<security:form-login login-page="/login"
+		authentication-failure-url="/login?error=true"
+		authentication-success-handler-ref="customAuthenticationSuccessHandler" />
+	<security:csrf disabled="true" />
+	
+	<security:logout logout-success-url="/login"
+		invalidate-session="true" logout-url="/logout"
+		delete-cookies='JSESSIONID' />
+	</security:http>	
+	
+	 <bean id="customAuthenticationSuccessHandler"
+        class="com.javaisfun.spring.web.controllers.CustomAuthenticationSuccessHandler" />
+ 
+
+</beans>
